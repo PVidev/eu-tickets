@@ -1,0 +1,367 @@
+{
+  "providers_info": {
+    "Omio": {
+      "description": "Omio is a leading travel platform that helps you search and book trains, buses, and flights across Europe. Compare prices, schedules, and book tickets all in one place.",
+      "features": [
+        "Multiple transport options",
+        "Price comparison",
+        "Mobile tickets",
+        "24/7 customer support",
+        "Available in multiple languages"
+      ],
+      "rules": [
+        "Tickets must be booked at least 1 hour before departure",
+        "Digital tickets are available immediately after purchase",
+        "Cancellation available up to 24 hours before departure",
+        "Name changes allowed for most tickets",
+        "Refunds processed within 5-7 business days"
+      ],
+      "advantages": "Easy booking process and price comparison across different transport types"
+    },
+    "Trainline": {
+      "description": "Trainline is Europe's leading train and bus app. Book rail and coach travel across Europe with our easy-to-use app.",
+      "features": [
+        "Real-time train tracking",
+        "Mobile tickets",
+        "Price alerts",
+        "Seat selection",
+        "Multiple currency support"
+      ],
+      "rules": [
+        "Advance booking required for best prices",
+        "E-tickets must be downloaded before travel",
+        "Some tickets require printing",
+        "Seat reservations mandatory for certain routes",
+        "Group discounts available for 4+ passengers"
+      ],
+      "advantages": "Specialized in train travel with best prices and real-time updates"
+    },
+    "Direct Ferries": {
+      "description": "Direct Ferries is the world's largest ferry ticket booking site, offering ferry crossings worldwide.",
+      "features": [
+        "Ferry route comparison",
+        "Live pricing",
+        "Cabin selection",
+        "Vehicle transport options",
+        "Schedule alerts"
+      ],
+      "rules": [
+        "Check-in required 2 hours before departure",
+        "Vehicle dimensions must be provided at booking",
+        "Pet travel requires special arrangements",
+        "Cabin booking recommended for night journeys",
+        "Passport/ID required for all international routes"
+      ],
+      "advantages": "Comprehensive ferry services with extensive route network"
+    },
+    "Trenitalia": {
+      "description": "Trenitalia is the world's largest ferry ticket booking site, offering ferry crossings worldwide.",
+      "features": [
+        "Live pricing",
+        "Cabin selection",
+        "Vehicle transport options",
+        "Schedule alerts"
+      ],
+      "rules": [
+        "Check-in required 2 hours before departure",
+        "Vehicle dimensions must be provided at booking",
+        "Pet travel requires special arrangements",
+        "Cabin booking recommended for night journeys",
+        "Passport/ID required for all international routes"
+      ],
+      "advantages": "Comprehensive ferry services with extensive route network"
+    }
+  },
+  "destinations": [
+    {
+      "country": "France",
+      "transport": ["train", "bus", "plane", "ferry"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane", "ferry"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        },
+        {
+          "name": "Direct Ferries",
+          "url": "https://www.directferries.com",
+          "types": ["ferry"]
+        }
+      ]
+    },
+    {
+      "country": "Germany",
+      "transport": ["train", "bus", "plane", "ferry"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane", "ferry"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        },
+        {
+          "name": "Direct Ferries",
+          "url": "https://www.directferries.com",
+          "types": ["ferry"]
+        }
+      ]
+    },
+    {
+      "country": "Belgium",
+      "transport": ["train", "bus", "plane", "ferry"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane", "ferry"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        },
+        {
+          "name": "Direct Ferries",
+          "url": "https://www.directferries.com",
+          "types": ["ferry"]
+        }
+      ]
+    },
+    {
+      "country": "Netherlands",
+      "transport": ["train", "bus", "plane", "ferry"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane", "ferry"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        },
+        {
+          "name": "Direct Ferries",
+          "url": "https://www.directferries.com",
+          "types": ["ferry"]
+        }
+      ]
+    },
+    {
+      "country": "Spain",
+      "transport": ["train", "bus", "plane", "ferry"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane", "ferry"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        },
+        {
+          "name": "Direct Ferries",
+          "url": "https://www.directferries.com",
+          "types": ["ferry"]
+        }
+      ]
+    },
+    {
+      "country": "Italy",
+      "transport": ["train", "bus", "plane", "ferry"],
+      "providers": [
+        {
+          "name": "Trenitalia",
+          "url": "https://www.trenitalia.com/en.html",
+          "types": ["train"]
+        }
+      ]
+    },
+    {
+      "country": "Sweden",
+      "transport": ["train", "bus", "plane", "ferry"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane", "ferry"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        },
+        {
+          "name": "Direct Ferries",
+          "url": "https://www.directferries.com",
+          "types": ["ferry"]
+        }
+      ]
+    },
+    {
+      "country": "Denmark",
+      "transport": ["train", "bus", "plane", "ferry"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane", "ferry"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        },
+        {
+          "name": "Direct Ferries",
+          "url": "https://www.directferries.com",
+          "types": ["ferry"]
+        }
+      ]
+    },
+    {
+      "country": "Norway",
+      "transport": ["train", "bus", "plane", "ferry"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane", "ferry"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        },
+        {
+          "name": "Direct Ferries",
+          "url": "https://www.directferries.com",
+          "types": ["ferry"]
+        }
+      ]
+    },
+    {
+      "country": "England",
+      "transport": ["train", "bus", "plane", "ferry"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane", "ferry"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        },
+        {
+          "name": "Direct Ferries",
+          "url": "https://www.directferries.com",
+          "types": ["ferry"]
+        }
+      ]
+    },
+    {
+      "country": "Czech Republic",
+      "transport": ["train", "bus", "plane"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        }
+      ]
+    },
+    {
+      "country": "Portugal",
+      "transport": ["train", "bus", "plane", "ferry"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane", "ferry"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        },
+        {
+          "name": "Direct Ferries",
+          "url": "https://www.directferries.com",
+          "types": ["ferry"]
+        }
+      ]
+    },
+    {
+      "country": "Switzerland",
+      "transport": ["train", "bus", "plane"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        }
+      ]
+    },
+    {
+      "country": "Austria",
+      "transport": ["train", "bus", "plane"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        }
+      ]
+    },
+    {
+      "country": "Greece",
+      "transport": ["train", "bus", "plane", "ferry"],
+      "providers": [
+        {
+          "name": "Omio",
+          "url": "https://www.omio.com",
+          "types": ["train", "bus", "plane", "ferry"]
+        },
+        {
+          "name": "Trainline",
+          "url": "https://www.trainline.com",
+          "types": ["train", "bus"]
+        },
+        {
+          "name": "Direct Ferries",
+          "url": "https://www.directferries.com",
+          "types": ["ferry"]
+        }
+      ]
+    }
+  ]
+} 

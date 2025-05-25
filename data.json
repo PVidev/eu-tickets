@@ -1,40 +1,130 @@
 {
   "providers_info": {
     "Omio": {
-      "description": "Omio is a leading travel platform that helps you search and book trains, buses, and flights across Europe. Compare prices, schedules, and book tickets all in one place.",
-      "features": [
-        "Multiple transport options",
-        "Price comparison",
-        "Mobile tickets",
-        "24/7 customer support",
-        "Available in multiple languages"
-      ],
-      "rules": [
-        "Tickets must be booked at least 1 hour before departure",
-        "Digital tickets are available immediately after purchase",
-        "Cancellation available up to 24 hours before departure",
-        "Name changes allowed for most tickets",
-        "Refunds processed within 5-7 business days"
-      ],
-      "advantages": "Easy booking process and price comparison across different transport types"
+        "description": "Omio is a leading travel platform that helps you search and book trains and buses across Europe. Compare prices, schedules, and book tickets all in one place.",
+        "features": [
+            "Multiple transport options",
+            "Price comparison",
+            "Mobile tickets",
+            "24/7 customer support",
+            "Available in multiple languages"
+        ],
+        "rules": [
+            "Tickets must be booked at least 1 hour before departure",
+            "Digital tickets are available immediately after purchase",
+            "Cancellation available up to 24 hours before departure",
+            "Name changes allowed for most tickets",
+            "Refunds processed within 5-7 business days"
+        ],
+        "advantages": "Easy booking process and price comparison across different transport types"
+    },
+    "FlixBus": {
+        "description": "FlixBus is a popular intercity bus service in Europe, offering affordable travel to thousands of destinations.",
+        "features": [
+            "Free Wi-Fi on board",
+            "Extra legroom",
+            "E-ticket availability",
+            "Real-time tracking",
+            "Multiple daily connections"
+        ],
+        "rules": [
+            "Tickets must be booked online",
+            "Cancellations allowed up to 15 minutes before departure",
+            "Rebooking available online",
+            "Refunds may incur a processing fee",
+            "Valid ID required when boarding"
+        ],
+        "advantages": "Affordable travel with modern amenities and frequent departures"
+    },
+    "Shuttle Planet": {
+        "description": "Shuttle Planet offers booking services for shuttles, private transfers, and intercity buses across Europe.",
+        "features": [
+            "Private and shared transfers",
+            "Fixed pricing",
+            "Online booking",
+            "Multilingual customer service",
+            "Instant confirmation"
+        ],
+        "rules": [
+            "Bookings must be made at least 24 hours in advance",
+            "Cancellations allowed up to 12 hours before trip",
+            "No refunds for no-shows",
+            "Driver wait time is limited to 15 minutes",
+            "Contact details required at booking"
+        ],
+        "advantages": "Great for door-to-door transport with flexible options"
+    },
+    "Trenitalia": {
+        "description": "Trenitalia is the primary train operator in Italy, providing domestic and international train services.",
+        "features": [
+            "High-speed trains",
+            "Seat reservations",
+            "Mobile and printable tickets",
+            "Loyalty programs",
+            "Travel classes"
+        ],
+        "rules": [
+            "Advance booking for best prices",
+            "Seat reservation required on high-speed trains",
+            "Non-refundable tickets are cheaper",
+            "Changes allowed with fee for flexible tickets",
+            "Passenger ID may be required"
+        ],
+        "advantages": "Reliable and fast travel across Italy with broad coverage"
+    },
+    "Italiarail": {
+        "description": "Italiarail is a reseller of Trenitalia tickets, offering international access to Italy's rail network.",
+        "features": [
+            "International ticketing",
+            "Customer support in English",
+            "Travel tips and resources",
+            "Mobile ticket access",
+            "Secure payment options"
+        ],
+        "rules": [
+            "Same-day ticket availability",
+            "Support for multiple currencies",
+            "Refund policies depend on fare type",
+            "Changes may be limited for certain fares",
+            "E-tickets accepted on most trains"
+        ],
+        "advantages": "Great for international travelers planning Italian train journeys"
     },
     "Trainline": {
-      "description": "Trainline is Europe's leading train and bus app. Book rail and coach travel across Europe with our easy-to-use app.",
-      "features": [
-        "Real-time train tracking",
-        "Mobile tickets",
-        "Price alerts",
-        "Seat selection",
-        "Multiple currency support"
-      ],
-      "rules": [
-        "Advance booking required for best prices",
-        "E-tickets must be downloaded before travel",
-        "Some tickets require printing",
-        "Seat reservations mandatory for certain routes",
-        "Group discounts available for 4+ passengers"
-      ],
-      "advantages": "Specialized in train travel with best prices and real-time updates"
+        "description": "Trainline is Europe's leading train and bus app. Book rail and coach travel across Europe with our easy-to-use app.",
+        "features": [
+            "Real-time train tracking",
+            "Mobile tickets",
+            "Price alerts",
+            "Seat selection",
+            "Multiple currency support"
+        ],
+        "rules": [
+            "Advance booking required for best prices",
+            "E-tickets must be downloaded before travel",
+            "Some tickets require printing",
+            "Seat reservations mandatory for certain routes",
+            "Group discounts available for 4+ passengers"
+        ],
+        "advantages": "Specialized in train travel with best prices and real-time updates"
+    },
+    "go‑ferry.com": {
+        "description": "Go-Ferry is an online booking platform for ferry routes across the Mediterranean, including Italy.",
+        "features": [
+            "Multiple ferry operators",
+            "Real-time availability",
+            "Price comparison",
+            "Multilingual support",
+            "Secure payment"
+        ],
+        "rules": [
+            "Booking fees may apply",
+            "Changes and cancellations depend on operator policy",
+            "Boarding pass required at check-in",
+            "Advance check-in required",
+            "Non-refundable tickets for low-cost fares"
+        ],
+        "advantages": "One-stop platform for ferry bookings with broad operator selection"
     },
     "Direct Ferries": {
       "description": "Direct Ferries is the world's largest ferry ticket booking site, offering ferry crossings worldwide.",
@@ -184,8 +274,58 @@
       "providers": [
         {
           "name": "Trenitalia",
-          "url": "https://www.trenitalia.com/en.html",
+          "url": "#",
           "types": ["train"]
+        },
+        {
+          "name": "Omio",
+          "url": "#",
+          "types": ["train", "bus"]
+        },
+        {
+          "name": "FlixBus",
+          "url": "#",
+          "types": ["bus"]
+        },
+        {
+          "name": "Shuttle Planet",
+          "url": "#",
+          "types": ["bus"]
+        },
+        {
+          "name": "Italiarail",
+          "url": "#",
+          "types": ["train"]
+        },
+        {
+          "name": "go‑ferry.com",
+          "url": "#",
+          "types": ["ferry"]
+        },
+        {
+          "name": "FerryHopper",
+          "url": "#",
+          "types": ["ferry"]
+        },
+        {
+          "name": "IsFerry",
+          "url": "#",
+          "types": ["ferry"]
+        },
+        {
+          "name": "Direct Ferries",
+          "url": "#",
+          "types": ["ferry"]
+        },
+        {
+          "name": "TraghettiOnline",
+          "url": "#",
+          "types": ["ferry"]
+        },
+        {
+          "name": "FerryScanner",
+          "url": "#",
+          "types": ["ferry"]
         }
       ]
     },

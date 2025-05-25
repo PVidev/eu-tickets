@@ -300,7 +300,7 @@
         {
           "name": "go‑ferry.com",
           "url": "#",
-          "types": ["ferry"]
+          "types": ["ferry", "bus"]
         },
         {
           "name": "FerryHopper",

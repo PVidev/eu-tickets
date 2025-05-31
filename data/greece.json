@@ -1,0 +1,90 @@
+{
+  "country": "Greece",
+  "transport": ["ferry", "bus", "train"],
+  "providers": [
+    {
+      "name": "go‑ferry.com",
+      "url": "https://www.go-ferry.com",
+      "types": ["ferry"],
+      "description": "Go-Ferry is an online booking platform for ferry routes across the Mediterranean, including Greece.",
+      "features": [
+        "Multiple ferry operators",
+        "Real-time availability",
+        "Price comparison",
+        "Multilingual support",
+        "Secure payment"
+      ],
+      "rules": [
+        "Booking fees may apply",
+        "Changes and cancellations depend on operator policy",
+        "Boarding pass required at check-in",
+        "Advance check-in required",
+        "Non-refundable tickets for low-cost fares"
+      ],
+      "advantages": "One-stop platform for ferry bookings with broad operator selection"
+    },
+    {
+      "name": "Direct Ferries",
+      "url": "https://www.directferries.com",
+      "types": ["ferry"],
+      "description": "Direct Ferries is the world's largest ferry ticket booking site, offering ferry crossings worldwide.",
+      "features": [
+        "Ferry route comparison",
+        "Live pricing",
+        "Cabin selection",
+        "Vehicle transport options",
+        "Schedule alerts"
+      ],
+      "rules": [
+        "Check-in required 2 hours before departure",
+        "Vehicle dimensions must be provided at booking",
+        "Pet travel requires special arrangements",
+        "Cabin booking recommended for night journeys",
+        "Passport/ID required for all international routes"
+      ],
+      "advantages": "Comprehensive ferry services with extensive route network"
+    },
+    {
+      "name": "FlixBus",
+      "url": "https://www.flixbus.com",
+      "types": ["bus"],
+      "description": "FlixBus is a popular intercity bus service in Europe, offering affordable travel to thousands of destinations.",
+      "features": [
+        "Free Wi-Fi on board",
+        "Extra legroom",
+        "E-ticket availability",
+        "Real-time tracking",
+        "Multiple daily connections"
+      ],
+      "rules": [
+        "Tickets must be booked online",
+        "Cancellations allowed up to 15 minutes before departure",
+        "Rebooking available online",
+        "Refunds may incur a processing fee",
+        "Valid ID required when boarding"
+      ],
+      "advantages": "Affordable travel with modern amenities and frequent departures"
+    },
+    {
+      "name": "TrainOSE",
+      "url": "https://www.trainose.gr",
+      "types": ["train"],
+      "description": "TrainOSE is the national railway company of Greece, providing domestic train services.",
+      "features": [
+        "Domestic train services",
+        "Online booking",
+        "Mobile tickets",
+        "Seat reservations",
+        "Travel classes"
+      ],
+      "rules": [
+        "Advance booking recommended",
+        "Seat reservation required for some routes",
+        "Refund policies vary by ticket type",
+        "Changes allowed with fee for flexible tickets",
+        "Valid ID required when traveling"
+      ],
+      "advantages": "Reliable domestic train service across Greece"
+    }
+  ]
+} 

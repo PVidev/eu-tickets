@@ -1,0 +1,90 @@
+{
+  "country": "Italy",
+  "transport": ["train", "bus", "ferry"],
+  "providers": [
+    {
+      "name": "Trenitalia",
+      "url": "https://www.trenitalia.com",
+      "types": ["train"],
+      "description": "Trenitalia is the primary train operator in Italy, providing domestic and international train services.",
+      "features": [
+        "High-speed trains",
+        "Seat reservations",
+        "Mobile and printable tickets",
+        "Loyalty programs",
+        "Travel classes"
+      ],
+      "rules": [
+        "Advance booking for best prices",
+        "Seat reservation required on high-speed trains",
+        "Non-refundable tickets are cheaper",
+        "Changes allowed with fee for flexible tickets",
+        "Passenger ID may be required"
+      ],
+      "advantages": "Reliable and fast travel across Italy with broad coverage"
+    },
+    {
+      "name": "Italiarail",
+      "url": "https://www.italiarail.com",
+      "types": ["train"],
+      "description": "Italiarail is a reseller of Trenitalia tickets, offering international access to Italy's rail network.",
+      "features": [
+        "International ticketing",
+        "Customer support in English",
+        "Travel tips and resources",
+        "Mobile ticket access",
+        "Secure payment options"
+      ],
+      "rules": [
+        "Same-day ticket availability",
+        "Support for multiple currencies",
+        "Refund policies depend on fare type",
+        "Changes may be limited for certain fares",
+        "E-tickets accepted on most trains"
+      ],
+      "advantages": "Great for international travelers planning Italian train journeys"
+    },
+    {
+      "name": "go‑ferry.com",
+      "url": "https://www.go-ferry.com",
+      "types": ["ferry"],
+      "description": "Go-Ferry is an online booking platform for ferry routes across the Mediterranean, including Italy.",
+      "features": [
+        "Multiple ferry operators",
+        "Real-time availability",
+        "Price comparison",
+        "Multilingual support",
+        "Secure payment"
+      ],
+      "rules": [
+        "Booking fees may apply",
+        "Changes and cancellations depend on operator policy",
+        "Boarding pass required at check-in",
+        "Advance check-in required",
+        "Non-refundable tickets for low-cost fares"
+      ],
+      "advantages": "One-stop platform for ferry bookings with broad operator selection"
+    },
+    {
+      "name": "FlixBus",
+      "url": "https://www.flixbus.com",
+      "types": ["bus"],
+      "description": "FlixBus is a popular intercity bus service in Europe, offering affordable travel to thousands of destinations.",
+      "features": [
+        "Free Wi-Fi on board",
+        "Extra legroom",
+        "E-ticket availability",
+        "Real-time tracking",
+        "Multiple daily connections"
+      ],
+      "rules": [
+        "Tickets must be booked online",
+        "Cancellations allowed up to 15 minutes before departure",
+        "Rebooking available online",
+        "Refunds may incur a processing fee",
+        "Valid ID required when boarding"
+      ],
+      "advantages": "Affordable travel with modern amenities and frequent departures"
+    }
+  ]
+} 

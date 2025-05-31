@@ -87,10 +87,22 @@ const swiper = new Swiper(".swiper", {
 document.addEventListener('DOMContentLoaded', function() {
     const searchBtn = document.getElementById('searchBtn');
     const searchResults = document.getElementById('searchResults');
-    let providersData = null;
     
     if (searchBtn) {
         searchBtn.addEventListener('click', performSearch);
+    }
+
+    async function loadCountryData(country) {
+        try {
+            const response = await fetch(`data/${country.toLowerCase().replace(' ', '_')}.json`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return await response.json();
+        } catch (error) {
+            console.error('Error loading country data:', error);
+            return null;
+        }
     }
 
     async function performSearch() {
@@ -103,14 +115,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         try {
-            const response = await fetch('data.json');
-            const data = await response.json();
-            providersData = data.providers_info;
-
-            const countryData = data.destinations.find(dest => dest.country === country);
+            const countryData = await loadCountryData(country);
             
             if (!countryData) {
-                searchResults.innerHTML = '<p>No results found for this country.</p>';
+                searchResults.innerHTML = '<p>No data found for this country.</p>';
                 return;
             }
 
@@ -131,7 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
             let resultsHTML = `<h3>Available Providers for ${transport} in ${country}</h3>`;
             
             relevantProviders.forEach((provider, index) => {
-                const providerInfo = providersData[provider.name];
                 resultsHTML += `
                     <div class="result-card">
                         <h3>${provider.name}</h3>
@@ -139,23 +146,28 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="result-buttons">
                             <a href="${provider.url}" target="_blank" class="provider-link">Visit Website</a>
                             <button class="info-btn" onclick="toggleInfo(${index})">Info</button>
+                            <button class="details-btn" onclick="showProviderDetails('${provider.name}', '${country}')">More Details</button>
                         </div>
                         <div class="provider-info" id="provider-info-${index}">
                             <div class="provider-info-content">
                                 <div class="description">
-                                    ${providerInfo.description}
+                                    ${provider.description}
                                 </div>
                                 <div class="features">
                                     <h4>Features</h4>
                                     <ul>
-                                        ${providerInfo.features.map(feature => `<li>${feature}</li>`).join('')}
+                                        ${provider.features.map(feature => `<li>${feature}</li>`).join('')}
                                     </ul>
                                 </div>
                                 <div class="rules">
                                     <h4>Booking Rules</h4>
                                     <ul>
-                                        ${providerInfo.rules.map(rule => `<li>${rule}</li>`).join('')}
+                                        ${provider.rules.map(rule => `<li>${rule}</li>`).join('')}
                                     </ul>
+                                </div>
+                                <div class="advantages">
+                                    <h4>Advantages</h4>
+                                    <p>${provider.advantages}</p>
                                 </div>
                             </div>
                         </div>
@@ -186,4 +198,62 @@ document.addEventListener('DOMContentLoaded', function() {
         // Toggle the clicked section
         infoSection.classList.toggle('expanded');
     };
+
+    // Make showProviderDetails available globally
+    window.showProviderDetails = async function(providerName, country) {
+        try {
+            const countryData = await loadCountryData(country);
+            const provider = countryData.providers.find(p => p.name === providerName);
+            
+            if (!provider) {
+                alert('Provider information not found');
+                return;
+            }
+
+            const modal = document.getElementById('infoModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            modalContent.innerHTML = `
+                <h2>${provider.name}</h2>
+                <div class="description">
+                    ${provider.description}
+                </div>
+                <div class="features">
+                    <h3>Features</h3>
+                    <ul>
+                        ${provider.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="rules">
+                    <h3>Booking Rules</h3>
+                    <ul>
+                        ${provider.rules.map(rule => `<li>${rule}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="advantages">
+                    <h3>Advantages</h3>
+                    <p>${provider.advantages}</p>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        } catch (error) {
+            console.error('Error showing provider details:', error);
+            alert('Error loading provider details');
+        }
+    };
+
+    // Close modal when clicking the close button or outside the modal
+    const modal = document.getElementById('infoModal');
+    const closeBtn = document.querySelector('.close-modal');
+    
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
 });

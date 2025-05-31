@@ -1,0 +1,90 @@
+{
+  "country": "Germany",
+  "transport": ["train", "bus", "ferry"],
+  "providers": [
+    {
+      "name": "Deutsche Bahn",
+      "url": "https://www.bahn.com",
+      "types": ["train"],
+      "description": "Deutsche Bahn is the national railway company of Germany, providing domestic and international train services.",
+      "features": [
+        "High-speed ICE trains",
+        "Seat reservations",
+        "Mobile tickets",
+        "Loyalty programs",
+        "Travel classes"
+      ],
+      "rules": [
+        "Advance booking for best prices",
+        "Seat reservation recommended on ICE trains",
+        "Non-refundable tickets are cheaper",
+        "Changes allowed with fee for flexible tickets",
+        "Passenger ID may be required"
+      ],
+      "advantages": "Extensive high-speed rail network across Germany and Europe"
+    },
+    {
+      "name": "Trainline",
+      "url": "https://www.trainline.com",
+      "types": ["train", "bus"],
+      "description": "Trainline is Europe's leading train and bus app. Book rail and coach travel across Europe.",
+      "features": [
+        "Real-time train tracking",
+        "Mobile tickets",
+        "Price alerts",
+        "Seat selection",
+        "Multiple currency support"
+      ],
+      "rules": [
+        "Advance booking required for best prices",
+        "E-tickets must be downloaded before travel",
+        "Some tickets require printing",
+        "Seat reservations mandatory for certain routes",
+        "Group discounts available for 4+ passengers"
+      ],
+      "advantages": "Specialized in train travel with best prices and real-time updates"
+    },
+    {
+      "name": "FlixBus",
+      "url": "https://www.flixbus.com",
+      "types": ["bus"],
+      "description": "FlixBus is a popular intercity bus service in Europe, offering affordable travel to thousands of destinations.",
+      "features": [
+        "Free Wi-Fi on board",
+        "Extra legroom",
+        "E-ticket availability",
+        "Real-time tracking",
+        "Multiple daily connections"
+      ],
+      "rules": [
+        "Tickets must be booked online",
+        "Cancellations allowed up to 15 minutes before departure",
+        "Rebooking available online",
+        "Refunds may incur a processing fee",
+        "Valid ID required when boarding"
+      ],
+      "advantages": "Affordable travel with modern amenities and frequent departures"
+    },
+    {
+      "name": "Direct Ferries",
+      "url": "https://www.directferries.com",
+      "types": ["ferry"],
+      "description": "Direct Ferries is the world's largest ferry ticket booking site, offering ferry crossings worldwide.",
+      "features": [
+        "Ferry route comparison",
+        "Live pricing",
+        "Cabin selection",
+        "Vehicle transport options",
+        "Schedule alerts"
+      ],
+      "rules": [
+        "Check-in required 2 hours before departure",
+        "Vehicle dimensions must be provided at booking",
+        "Pet travel requires special arrangements",
+        "Cabin booking recommended for night journeys",
+        "Passport/ID required for all international routes"
+      ],
+      "advantages": "Comprehensive ferry services with extensive route network"
+    }
+  ]
+} 

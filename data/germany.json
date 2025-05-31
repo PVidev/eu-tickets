@@ -4,24 +4,38 @@
   "providers": [
     {
       "name": "Deutsche Bahn",
-      "url": "https://www.bahn.com",
+      "url": "https://www.bahn.de",
       "types": ["train"],
-      "description": "Deutsche Bahn is the national railway company of Germany, providing domestic and international train services.",
+      "description": "Deutsche Bahn is Germany's national railway company, offering comprehensive train services across the country and Europe.",
       "features": [
         "High-speed ICE trains",
-        "Seat reservations",
-        "Mobile tickets",
-        "Loyalty programs",
-        "Travel classes"
+        "Regional services",
+        "International connections",
+        "Bike transport",
+        "First and second class options"
       ],
       "rules": [
-        "Advance booking for best prices",
-        "Seat reservation recommended on ICE trains",
-        "Non-refundable tickets are cheaper",
-        "Changes allowed with fee for flexible tickets",
-        "Passenger ID may be required"
+        "Advance booking recommended",
+        "Flexible ticket options available",
+        "Bike reservation required",
+        "Group discounts available",
+        "ID verification required"
       ],
-      "advantages": "Extensive high-speed rail network across Germany and Europe"
+      "advantages": "Extensive network coverage with modern trains and excellent service",
+      "contacts": [
+        "Customer Service: +49 30 2970",
+        "International: +49 30 2970",
+        "Email: service@bahn.de",
+        "Social Media: @DB_Bahn",
+        "Emergency: 0800 6 99 66 33"
+      ],
+      "refunds": [
+        "Full refund up to 24 hours before departure",
+        "Partial refund up to 12 hours before departure",
+        "No refund for no-shows",
+        "Processing time: 7-10 business days",
+        "Administrative fee may apply"
+      ]
     },
     {
       "name": "Trainline",
@@ -48,22 +62,36 @@
       "name": "FlixBus",
       "url": "https://www.flixbus.com",
       "types": ["bus"],
-      "description": "FlixBus is a popular intercity bus service in Europe, offering affordable travel to thousands of destinations.",
+      "description": "FlixBus is a leading bus operator in Germany, offering affordable travel options across Europe.",
       "features": [
         "Free Wi-Fi on board",
-        "Extra legroom",
-        "E-ticket availability",
-        "Real-time tracking",
-        "Multiple daily connections"
+        "Power sockets",
+        "Extra legroom options",
+        "Mobile tickets",
+        "Real-time tracking"
       ],
       "rules": [
-        "Tickets must be booked online",
-        "Cancellations allowed up to 15 minutes before departure",
-        "Rebooking available online",
-        "Refunds may incur a processing fee",
-        "Valid ID required when boarding"
+        "Online booking required",
+        "Arrive 15 minutes before departure",
+        "One piece of luggage included",
+        "Pet transport available",
+        "Bike transport possible"
       ],
-      "advantages": "Affordable travel with modern amenities and frequent departures"
+      "advantages": "Affordable travel with modern amenities and extensive network",
+      "contacts": [
+        "Customer Service: +49 30 300 137 300",
+        "International: +49 30 300 137 300",
+        "Email: support@flixbus.com",
+        "Social Media: @FlixBus",
+        "WhatsApp Support: +49 30 300 137 300"
+      ],
+      "refunds": [
+        "Free cancellation up to 15 minutes before departure",
+        "Refund to original payment method",
+        "Processing time: 5-7 business days",
+        "No refund for no-shows",
+        "Partial refund for late cancellations"
+      ]
     },
     {
       "name": "Direct Ferries",

@@ -32,46 +32,50 @@
       </ul>
     </nav>
 
-    <section class="section__container destination__container" id="destination">
-      <h2 class="section__header">Search for Transportation</h2>
-      <div class="search-form">
-        <div class="form-groups-container">
+    <section class="section__container contact__container" id="contact">
+      <h2 class="section__header">Contact Us</h2>
+      <div class="contact-form">
+        <form id="contactForm" onsubmit="return validateForm(event)">
           <div class="form-group">
-            <label for="country">Select destination country:</label>
-            <select id="country" name="country">
-              <option value="">Select a destination country</option>
-              <option value="Austria">Austria</option>
-              <option value="Belgium">Belgium</option>
-              <option value="Czech Republic">Czech Republic</option>
-              <option value="Denmark">Denmark</option>
-              <option value="England">England</option>
-              <option value="France">France</option>
-              <option value="Germany">Germany</option>
-              <option value="Greece">Greece</option>
-              <option value="Italy">Italy</option>
-              <option value="Netherlands">Netherlands</option>
-              <option value="Norway">Norway</option>
-              <option value="Portugal">Portugal</option>
-              <option value="Spain">Spain</option>
-              <option value="Sweden">Sweden</option>
-              <option value="Switzerland">Switzerland</option>
-            </select>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
           </div>
-          <div class="form-group">
-            <label for="transport">Transportation Type:</label>
-            <select id="transport" name="transport">
-              <option value="">Select transport</option>
-              <option value="train">Train</option>
-              <option value="bus">Bus</option>
-              <option value="ferry">Ferry</option>
-            </select>
-          </div>
-        </div>
-        <button id="searchBtn" class="search-btn">Search</button>
-      </div>
 
-      <div id="searchResults" class="search-results">
-        <!-- Results will be displayed here -->
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+              <option value="">Select Department</option>
+              <option value="sales@eutickets.com">Sales & Bookings</option>
+              <option value="support@eutickets.com">Customer Support</option>
+              <option value="info@eutickets.com">General Information</option>
+              <option value="partners@eutickets.com">Business Partnerships</option>
+              <option value="press@eutickets.com">Press & Media</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" minlength="60" maxlength="1500" required></textarea>
+            <div class="char-count"><span id="charCount">0</span>/1500 characters</div>
+          </div>
+
+          <div class="form-group captcha-group">
+            <label for="captcha">Security Check: What is 2 + 3?</label>
+            <input type="number" id="captcha" name="captcha" required>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
       </div>
     </section>
 
@@ -130,5 +134,6 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
+    <script src="contact.js"></script>
   </body>
 </html>

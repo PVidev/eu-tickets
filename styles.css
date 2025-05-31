@@ -961,3 +961,259 @@ nav {
     font-size: 1.1rem;
   }
 }
+
+.provider-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.provider-details.expanded {
+  max-height: 2000px;
+}
+
+.provider-details-content {
+  padding: 1.5rem;
+}
+
+.provider-details h3 {
+  color: var(--primary-color);
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.provider-details .description {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.provider-details ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.provider-details li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text-light);
+}
+
+.provider-details li::before {
+  content: "•";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+}
+
+.provider-details .advantages {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.provider-details .advantages p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.provider-details .contacts,
+.provider-details .refunds {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.provider-details .contacts h3,
+.provider-details .refunds h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.provider-details .contacts ul,
+.provider-details .refunds ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.provider-details .contacts li,
+.provider-details .refunds li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text-light);
+}
+
+.provider-details .contacts li::before,
+.provider-details .refunds li::before {
+  content: "•";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .provider-details-content {
+    padding: 1rem;
+  }
+}
+
+/* Contact Form Styles */
+.contact__container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact-form {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.char-count {
+  text-align: right;
+  color: var(--text-light);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.captcha-group {
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #d45a3f;
+}
+
+/* Responsive styles for contact form */
+@media (max-width: 768px) {
+  .contact__container {
+    padding: 1rem;
+  }
+  
+  .contact-form {
+    padding: 1.5rem;
+  }
+}
+
+/* Stats Section Styles */
+.stats__container {
+  background-color: var(--white);
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stats__card {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.stats__card:hover {
+  transform: translateY(-5px);
+}
+
+.stats__card h4 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stats__card p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 1024px) {
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats__container {
+    padding: 2rem 1rem;
+  }
+  
+  .stats__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .stats__card {
+    padding: 1.5rem;
+  }
+  
+  .stats__card h4 {
+    font-size: 2rem;
+  }
+}

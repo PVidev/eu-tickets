@@ -21,28 +21,56 @@
         "Changes allowed with fee for flexible tickets",
         "Passenger ID may be required"
       ],
-      "advantages": "Reliable and fast travel across Italy with broad coverage"
+      "advantages": "Reliable and fast travel across Italy with broad coverage",
+      "contacts": [
+        "Customer Service: +39 06 68475475",
+        "International Support: +39 06 68475475",
+        "Email: customer.service@trenitalia.it",
+        "Social Media: @TrenitaliaOfficial",
+        "Emergency: 800 89 20 21"
+      ],
+      "refunds": [
+        "Full refund available up to 24 hours before departure",
+        "Partial refund (50%) up to 12 hours before departure",
+        "No refund for no-shows",
+        "Refund processing time: 5-7 business days",
+        "Administrative fee may apply for refunds"
+      ]
     },
     {
       "name": "Italiarail",
       "url": "https://www.italiarail.com",
       "types": ["train"],
-      "description": "Italiarail is a reseller of Trenitalia tickets, offering international access to Italy's rail network.",
+      "description": "Trenitalia is the primary train operator in Italy, providing domestic and international train services.",
       "features": [
-        "International ticketing",
-        "Customer support in English",
-        "Travel tips and resources",
-        "Mobile ticket access",
-        "Secure payment options"
+        "High-speed trains",
+        "Seat reservations",
+        "Mobile and printable tickets",
+        "Loyalty programs",
+        "Travel classes"
       ],
       "rules": [
-        "Same-day ticket availability",
-        "Support for multiple currencies",
-        "Refund policies depend on fare type",
-        "Changes may be limited for certain fares",
-        "E-tickets accepted on most trains"
+        "Advance booking for best prices",
+        "Seat reservation required on high-speed trains",
+        "Non-refundable tickets are cheaper",
+        "Changes allowed with fee for flexible tickets",
+        "Passenger ID may be required"
       ],
-      "advantages": "Great for international travelers planning Italian train journeys"
+      "advantages": "Reliable and fast travel across Italy with broad coverage",
+      "contacts": [
+        "Customer Service: +39 06 68475475",
+        "International Support: +39 06 68475475",
+        "Email: customer.service@trenitalia.it",
+        "Social Media: @TrenitaliaOfficial",
+        "Emergency: 800 89 20 21"
+      ],
+      "refunds": [
+        "Full refund available up to 24 hours before departure",
+        "Partial refund (50%) up to 12 hours before departure",
+        "No refund for no-shows",
+        "Refund processing time: 5-7 business days",
+        "Administrative fee may apply for refunds"
+      ]
     },
     {
       "name": "go‑ferry.com",
@@ -85,6 +113,41 @@
         "Valid ID required when boarding"
       ],
       "advantages": "Affordable travel with modern amenities and frequent departures"
+    },
+    {
+      "name": "Italo",
+      "url": "https://www.italotreno.it",
+      "types": ["train"],
+      "description": "Italo is a private high-speed train operator in Italy, offering modern and comfortable travel options.",
+      "features": [
+        "Modern high-speed trains",
+        "Free Wi-Fi on board",
+        "Power sockets at seats",
+        "Lounge access for premium tickets",
+        "Mobile app for tickets"
+      ],
+      "rules": [
+        "Online booking required",
+        "ID verification at check-in",
+        "Flexible ticket changes",
+        "Group booking available",
+        "Bike transport available"
+      ],
+      "advantages": "Modern trains with excellent service and competitive prices",
+      "contacts": [
+        "Customer Service: 06 07 08",
+        "International: +39 06 07 08",
+        "Email: assistenza@italotreno.it",
+        "Social Media: @ItaloTreno",
+        "WhatsApp Support: +39 06 07 08"
+      ],
+      "refunds": [
+        "100% refund up to 48 hours before departure",
+        "75% refund up to 24 hours before departure",
+        "50% refund up to 12 hours before departure",
+        "No refund for last-minute cancellations",
+        "Refund to original payment method"
+      ]
     }
   ]
 } 

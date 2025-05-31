@@ -154,19 +154,19 @@ document.addEventListener('DOMContentLoaded', function() {
                                     ${provider.description}
                                 </div>
                                 <div class="features">
-                                    <h4>Features</h4>
+                                    <h4>Features:</h4>
                                     <ul>
                                         ${provider.features.map(feature => `<li>${feature}</li>`).join('')}
                                     </ul>
                                 </div>
                                 <div class="rules">
-                                    <h4>Booking Rules</h4>
+                                    <h4>Booking Rules:</h4>
                                     <ul>
                                         ${provider.rules.map(rule => `<li>${rule}</li>`).join('')}
                                     </ul>
                                 </div>
                                 <div class="advantages">
-                                    <h4>Advantages</h4>
+                                    <h4>Advantages:</h4>
                                     <p>${provider.advantages}</p>
                                 </div>
                             </div>
@@ -202,53 +202,129 @@ document.addEventListener('DOMContentLoaded', function() {
     // Make showProviderDetails available globally
     window.showProviderDetails = async function(providerName, country) {
         try {
-            const countryData = await loadCountryData(country);
-            const provider = countryData.providers.find(p => p.name === providerName);
+            // Check if this provider's details are already expanded
+            const resultCards = document.querySelectorAll('.result-card');
+            const currentCard = Array.from(resultCards).find(card => 
+                card.querySelector('h3').textContent === providerName
+            );
             
-            if (!provider) {
-                alert('Provider information not found');
-                return;
+            if (currentCard) {
+                const existingDetails = currentCard.querySelector('.provider-details');
+                if (existingDetails && existingDetails.classList.contains('expanded')) {
+                    // If details are already expanded, collapse them
+                    existingDetails.classList.remove('expanded');
+                    return;
+                }
+                
+                // Remove any other expanded details
+                document.querySelectorAll('.provider-details.expanded').forEach(details => {
+                    details.classList.remove('expanded');
+                });
             }
 
-            const modal = document.getElementById('infoModal');
-            const modalContent = document.getElementById('modalContent');
-            
-            modalContent.innerHTML = `
-                <h2>${provider.name}</h2>
-                <div class="description">
-                    ${provider.description}
-                </div>
-                <div class="features">
-                    <h3>Features</h3>
-                    <ul>
-                        ${provider.features.map(feature => `<li>${feature}</li>`).join('')}
-                    </ul>
-                </div>
-                <div class="rules">
-                    <h3>Booking Rules</h3>
-                    <ul>
-                        ${provider.rules.map(rule => `<li>${rule}</li>`).join('')}
-                    </ul>
-                </div>
-                <div class="advantages">
-                    <h3>Advantages</h3>
-                    <p>${provider.advantages}</p>
+            const countryData = await loadCountryData(country);
+            if (!countryData) {
+                throw new Error('Could not load country data');
+            }
+
+            const provider = countryData.providers.find(p => p.name === providerName);
+            if (!provider) {
+                throw new Error(`Provider "${providerName}" not found in ${country}`);
+            }
+
+            const detailsSection = document.createElement('div');
+            detailsSection.className = 'provider-details';
+            detailsSection.innerHTML = `
+                <div class="provider-details-content">
+                    <div class="description">
+                        ${provider.description}
+                    </div>
+                    <div class="features">
+                        <h3>Features</h3>
+                        <ul>
+                            ${provider.features.map(feature => `<li>${feature}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="rules">
+                        <h3>Booking Rules</h3>
+                        <ul>
+                            ${provider.rules.map(rule => `<li>${rule}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="advantages">
+                        <h3>Advantages</h3>
+                        <p>${provider.advantages}</p>
+                    </div>
+                    <div class="contacts">
+                        <h3>Contacts</h3>
+                        <ul>
+                            ${provider.contacts ? provider.contacts.map(contact => `<li>${contact}</li>`).join('') : '<li>No contact information available</li>'}
+                        </ul>
+                    </div>
+                    <div class="refunds">
+                        <h3>Refund Policy</h3>
+                        <ul>
+                            ${provider.refunds ? provider.refunds.map(refund => `<li>${refund}</li>`).join('') : '<li>No refund information available</li>'}
+                        </ul>
+                    </div>
                 </div>
             `;
+
+            // Find the result card for this provider
+            const resultCard = Array.from(resultCards).find(card => 
+                card.querySelector('h3').textContent === providerName
+            );
             
-            modal.style.display = 'block';
+            if (resultCard) {
+                // Remove any existing details section
+                const existingDetails = resultCard.querySelector('.provider-details');
+                if (existingDetails) {
+                    existingDetails.remove();
+                }
+                
+                // Add the new details section
+                resultCard.appendChild(detailsSection);
+                
+                // Add animation class
+                setTimeout(() => {
+                    detailsSection.classList.add('expanded');
+                }, 10);
+            } else {
+                throw new Error(`Could not find result card for provider: ${providerName}`);
+            }
         } catch (error) {
             console.error('Error showing provider details:', error);
-            alert('Error loading provider details');
+            // Show error message to user
+            const errorMessage = document.createElement('div');
+            errorMessage.className = 'error-message';
+            errorMessage.textContent = `Error: ${error.message}. Please try again.`;
+            errorMessage.style.color = 'red';
+            errorMessage.style.padding = '1rem';
+            errorMessage.style.marginTop = '1rem';
+            errorMessage.style.backgroundColor = '#fff3f3';
+            errorMessage.style.borderRadius = '0.5rem';
+            errorMessage.style.border = '1px solid #ffcdd2';
+            
+            // Find the search results container
+            const searchResults = document.getElementById('searchResults');
+            if (searchResults) {
+                searchResults.appendChild(errorMessage);
+                // Remove error message after 5 seconds
+                setTimeout(() => {
+                    errorMessage.remove();
+                }, 5000);
+            }
         }
     };
 
-    // Close modal when clicking the close button or outside the modal
+    // Remove modal-related code
     const modal = document.getElementById('infoModal');
     const closeBtn = document.querySelector('.close-modal');
     
-    closeBtn.onclick = function() {
-        modal.style.display = 'none';
+    if (closeBtn) {
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
     }
     
     window.onclick = function(event) {

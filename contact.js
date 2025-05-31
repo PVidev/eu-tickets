@@ -1,63 +1,88 @@
 // Генериране на случайна математическа задача
 function generateCaptcha() {
-    const operations = [
-        { op: '+', func: (a, b) => a + b },
-        { op: '-', func: (a, b) => a - b },
-        { op: '*', func: (a, b) => a * b }
-    ];
-    
+    const operations = ['+', '-', '*'];
     const operation = operations[Math.floor(Math.random() * operations.length)];
-    const num1 = Math.floor(Math.random() * 10) + 1;
-    const num2 = Math.floor(Math.random() * 10) + 1;
+    let num1 = Math.floor(Math.random() * 10) + 1;
+    let num2 = Math.floor(Math.random() * 10) + 1;
+    let answer;
+
+    switch(operation) {
+        case '+':
+            answer = num1 + num2;
+            break;
+        case '-':
+            // Уверете се, че резултатът е положително число
+            if (num1 < num2) {
+                [num1, num2] = [num2, num1];
+            }
+            answer = num1 - num2;
+            break;
+        case '*':
+            answer = num1 * num2;
+            break;
+    }
+
+    const captchaLabel = document.querySelector('.captcha-group label');
+    captchaLabel.textContent = `Security Check: What is ${num1} ${operation} ${num2}?`;
     
-    // Запазваме отговора в localStorage
-    const answer = operation.func(num1, num2);
-    localStorage.setItem('captchaAnswer', answer);
-    
-    return `${num1} ${operation.op} ${num2}`;
+    // Запазване на отговора в sessionStorage
+    sessionStorage.setItem('captcha_answer', answer);
 }
 
 // Инициализация на формата
 document.addEventListener('DOMContentLoaded', function() {
+    // Инициализация на формата
+    const form = document.getElementById('contactForm');
     const messageInput = document.getElementById('message');
     const charCount = document.getElementById('charCount');
-    const captchaLabel = document.querySelector('.captcha-group label');
     
+    // Генериране на CSRF токен
+    const csrfToken = Math.random().toString(36).substring(2);
+    sessionStorage.setItem('csrf_token', csrfToken);
+    
+    // Добавяне на CSRF токен към формата
+    const csrfInput = document.createElement('input');
+    csrfInput.type = 'hidden';
+    csrfInput.name = 'csrf_token';
+    csrfInput.value = csrfToken;
+    form.appendChild(csrfInput);
+
     // Генериране на първата captcha
-    captchaLabel.textContent = `Security Check: What is ${generateCaptcha()}?`;
-    
-    // Брояч на символите
+    generateCaptcha();
+
+    // Броене на символите в съобщението
     messageInput.addEventListener('input', function() {
         const length = this.value.length;
         charCount.textContent = length;
         
         if (length < 60) {
-            this.setCustomValidity('Message must be at least 60 characters long');
+            charCount.style.color = 'red';
         } else if (length > 1500) {
-            this.setCustomValidity('Message cannot exceed 1500 characters');
+            charCount.style.color = 'red';
         } else {
-            this.setCustomValidity('');
+            charCount.style.color = 'var(--text-light)';
         }
     });
-    
-    // Валидация на формата
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+
+    // Валидация и изпращане на формата
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Проверка на captcha
+        const captchaInput = document.getElementById('captcha');
+        const captchaAnswer = sessionStorage.getItem('captcha_answer');
         
-        const captcha = document.getElementById('captcha').value;
-        const correctAnswer = localStorage.getItem('captchaAnswer');
-        
-        if (captcha !== correctAnswer) {
-            alert('Please enter the correct answer to the security check');
-            // Генериране на нова captcha
-            captchaLabel.textContent = `Security Check: What is ${generateCaptcha()}?`;
-            document.getElementById('captcha').value = '';
-            return false;
+        if (parseInt(captchaInput.value) !== parseInt(captchaAnswer)) {
+            alert('Invalid captcha answer. Please try again.');
+            generateCaptcha();
+            captchaInput.value = '';
+            return;
         }
+
+        // Събиране на данните от формата
+        const formData = new FormData(form);
         
-        // Изпращане на формата чрез AJAX
-        const formData = new FormData(this);
-        
+        // Изпращане на AJAX заявка
         fetch('process_contact.php', {
             method: 'POST',
             body: formData
@@ -65,20 +90,26 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert('Thank you for your message! We will get back to you soon.');
-                this.reset();
-                charCount.textContent = '0';
+                // Показване на съобщение за успех
+                alert('Message sent successfully!');
+                // Изчистване на формата
+                form.reset();
                 // Генериране на нова captcha
-                captchaLabel.textContent = `Security Check: What is ${generateCaptcha()}?`;
+                generateCaptcha();
+                // Нулиране на брояча на символите
+                charCount.textContent = '0';
             } else {
-                alert('Error: ' + data.message);
+                // Показване на съобщение за грешка
+                alert(data.message || 'An error occurred. Please try again.');
+                // Генериране на нова captcha при грешка
+                generateCaptcha();
             }
         })
         .catch(error => {
             console.error('Error:', error);
             alert('An error occurred while sending your message. Please try again.');
+            // Генериране на нова captcha при грешка
+            generateCaptcha();
         });
-        
-        return false;
     });
 }); 
